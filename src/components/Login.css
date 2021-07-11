@@ -105,3 +105,26 @@
     text-decoration: none;
     text-align: center;
 }
+
+@media screen and (max-width: 500px) {
+    .login__imagecontainer {
+        display: none;
+    }
+    .login__image {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .login__imagecontainer {
+        padding: 0;
+        margin-left: -80vh;
+    }
+
+    .login__image {
+        height: 100vh;
+        width: 120%;
+        margin-left: -0vh;
+        margin-bottom: 0;
+    }
+}
