@@ -69,4 +69,81 @@
     padding: 1vh;
     color: white;
     border-radius: 100%;
+    cursor: default;
+}
+
+@media screen and (max-width: 550px) {
+    .Navbar {
+        padding: 1vh 0.5vh;
+    }
+
+    .nav__foodict {
+        display: none;
+    }
+
+    .nav__restaurants {
+        font-size: 1.5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__name {
+        font-size: 1.5vh;
+        margin-right: 1.5vh;
+        margin-left: 1.5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__pastorders {
+        font-size: 1.5vh;
+        margin-right: 1vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cartitems__total {
+        font-size: 1.5vh;
+        padding: 0.5vh;
+        height: 1vh;
+        width: 1vh;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .Navbar {
+        padding: 1vh 1vh;
+    }
+
+    .nav__foodict {
+        display: none;
+    }
+
+    .nav__restaurants {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar__pastorders {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

@@ -14,13 +14,17 @@ function Navbar() {
                     ></img>
                     <span className="nav__foodict">Foodict</span>
                     <span className="nav__restaurants">
-                        Restaurants Near You
+                        Restaurants <span className="near__you">Near You</span>
                     </span>
                 </div>
             </div>
             <div className="navbar__right">
-                <span className="navbar__name">Hello, Name</span>
-                <span className="navbar__pastorders">Past Orders</span>
+                <span className="navbar__name">
+                    Hello, <span className="after__hello">Swarnab</span>
+                </span>
+                <span className="navbar__pastorders">
+                    Past <span className="orders__after">Orders</span>
+                </span>
                 <ShoppingCartRoundedIcon className="navbar__cart" />
                 <span className="cartitems__total">5</span>
             </div>
