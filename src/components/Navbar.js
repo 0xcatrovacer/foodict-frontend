@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navbar.css";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 
 function Navbar() {
@@ -12,14 +13,16 @@ function Navbar() {
                         alt=""
                     ></img>
                     <span className="nav__foodict">Foodict</span>
+                    <span className="nav__restaurants">
+                        Restaurants Near You
+                    </span>
                 </div>
             </div>
             <div className="navbar__right">
-                <span className="navbar__name">Name</span>
+                <span className="navbar__name">Hello, Name</span>
                 <span className="navbar__pastorders">Past Orders</span>
-                <span className="navbar__cart">
-                    <ShoppingCartRoundedIcon />
-                </span>
+                <ShoppingCartRoundedIcon className="navbar__cart" />
+                <span className="cartitems__total">5</span>
             </div>
         </div>
     );
