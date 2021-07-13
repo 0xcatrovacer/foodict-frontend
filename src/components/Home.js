@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 
 import SearchIcon from "@material-ui/icons/Search";
+import CuratedList from "./CuratedList";
 
 function Home() {
     return (
@@ -24,10 +25,8 @@ function Home() {
             </div>
             <div className="curated__container">
                 <h2 className="curated__heading">Curated List Just for You</h2>
-
-                <div className="curated__list">
-                    <h3>BreakFast</h3>
-                    <div className="curated__listitems">Listitem</div>
+                <div className="curated__lists">
+                    <CuratedList cuisine="Breakfast" />
                 </div>
             </div>
         </div>
