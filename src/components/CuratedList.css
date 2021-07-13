@@ -1,0 +1,81 @@
+.CuratedList {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cuisine__heading {
+    font-size: 2.7vh;
+    margin-bottom: 7vh;
+    cursor: default;
+}
+
+.curated__listitems {
+    display: flex;
+    flex-direction: row;
+    cursor: default;
+}
+
+.individual__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5vh;
+    width: 50vh;
+    height: 37vh;
+    background-color: #ffd8bf;
+    border-radius: 2vh 2vh 1vh 1vh;
+}
+
+.item__image {
+    height: 24vh;
+    width: 100%;
+    border-radius: 2vh;
+    margin-bottom: 2vh;
+}
+
+.item__description {
+    display: flex;
+    flex-direction: column;
+}
+
+.item__name {
+    font-size: 2vh;
+    margin-left: 0.5vh;
+    margin-bottom: 1vh;
+}
+
+.item__res_dist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.7vh;
+    margin-bottom: 1vh;
+}
+
+.item__restaurant {
+    margin-left: 0.5vh;
+}
+
+.item__distance {
+    margin-right: 0.5vh;
+}
+
+.addcart__button {
+    width: 20vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    height: 4.5vh;
+    font-size: 1.9vh;
+    border: 2px solid #ff6200;
+    border-radius: 1.1vh 1.1vh 0.5vh 0.5vh;
+    background-color: #ff914d;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.addcart__button:hover {
+    background-color: #ff6200;
+    color: #ffffff;
+}
