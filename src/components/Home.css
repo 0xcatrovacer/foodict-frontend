@@ -1,3 +1,5 @@
+/* Search Container */
+
 .search__container {
     display: flex;
     flex-direction: row;
@@ -69,6 +71,21 @@
         font-size: 2.5vh;
     }
 }
+
+/* Curated Container */
+
+.curated__container {
+    margin-top: 12vh;
+    margin-left: 10vh;
+}
+
+.curated__heading {
+    margin-bottom: 6vh;
+    font-size: 3.4vh;
+    color: #ff914d;
+}
+
+/* Media Queries */
 
 @media screen and (max-width: 750px) {
     .search__container {
