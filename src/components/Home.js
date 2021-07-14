@@ -27,6 +27,9 @@ function Home() {
                 <h2 className="curated__heading">Curated List Just for You</h2>
                 <div className="curated__lists">
                     <CuratedList cuisine="Breakfast" />
+                    <CuratedList cuisine="Lunch" />
+                    <CuratedList cuisine="Snacks" />
+                    <CuratedList cuisine="Dinner" />
                 </div>
             </div>
         </div>

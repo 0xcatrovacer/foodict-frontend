@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    margin-bottom: 10vh;
 }
 
 .cuisine__heading {
@@ -10,10 +11,58 @@
     cursor: default;
 }
 
+.slider__container {
+    display: flex;
+    align-items: center;
+}
+
+.sliderButton {
+    position: absolute;
+    margin-bottom: 0;
+    width: 4vh;
+    height: 4vh;
+    border: 0.4vh solid #ff914d;
+    color: #ff914d;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 1vh;
+    font-size: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 1;
+    box-shadow: 0.5vh 0.5vh 3vh black;
+}
+
+.angleLeft {
+    left: 0;
+    margin-left: 5vh;
+}
+
+.angleRight {
+    right: 0;
+    margin-right: 3vh;
+    margin-top: 17vh;
+}
+
+.sliderButton:hover {
+    background-color: #ff914d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 .curated__listitems {
     display: flex;
     flex-direction: row;
     cursor: default;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: all 1s ease-in;
+    scroll-behavior: smooth;
+}
+
+.curated__listitems::-webkit-scrollbar {
+    display: none;
 }
 
 .individual__item {
@@ -58,7 +107,7 @@
     margin-left: 0vh;
 }
 
-.item__distance {
+.item__price {
     margin-right: -2.5vh;
 }
 
@@ -84,6 +133,9 @@
 @media screen and (max-width: 960px) {
     .CuratedList {
         margin-left: -5vh;
+    }
+    .sliderButton {
+        display: none;
     }
 }
 
