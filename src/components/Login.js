@@ -15,7 +15,7 @@ function Login() {
             <div className="login__imagecontainer">
                 <img
                     className="login__image"
-                    src="https://foodict.s3.ap-south-1.amazonaws.com/background.jpg"
+                    src="https://foodict.s3.ap-south-1.amazonaws.com/General/background.jpg"
                     alt=""
                 ></img>
             </div>
@@ -23,7 +23,7 @@ function Login() {
                 <div>
                     <img
                         className="login__logo"
-                        src="https://foodict.s3.ap-south-1.amazonaws.com/foodictLogo.png"
+                        src="https://foodict.s3.ap-south-1.amazonaws.com/General/foodictLogo.png"
                         alt=""
                     ></img>
                 </div>

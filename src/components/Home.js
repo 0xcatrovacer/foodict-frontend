@@ -28,7 +28,7 @@ function Home() {
                 <div className="curated__lists">
                     <CuratedList cuisine="Breakfast" />
                     <CuratedList cuisine="Lunch" />
-                    <CuratedList cuisine="Snacks" />
+                    <CuratedList cuisine="Snacks & Beverages" />
                     <CuratedList cuisine="Dinner" />
                 </div>
             </div>

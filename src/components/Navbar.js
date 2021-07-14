@@ -9,7 +9,7 @@ function Navbar() {
                 <div className="logo__container">
                     <img
                         className="nav__logo"
-                        src="https://foodict.s3.ap-south-1.amazonaws.com/foodictLogo.png"
+                        src="https://foodict.s3.ap-south-1.amazonaws.com/General/foodictLogo.png"
                         alt=""
                     ></img>
                     <span className="nav__foodict">Foodict</span>

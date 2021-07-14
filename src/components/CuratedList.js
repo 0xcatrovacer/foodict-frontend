@@ -8,7 +8,7 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/bengali1.jpg",
         price: 300,
     },
     {
@@ -16,7 +16,7 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/english1.jpg",
         price: 300,
     },
     {
@@ -24,7 +24,7 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/english2.jpg",
         price: 300,
     },
     {
@@ -32,7 +32,7 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/french.png",
         price: 300,
     },
     {
@@ -40,7 +40,7 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/gujarati1.jpg",
         price: 300,
     },
     {
@@ -48,7 +48,39 @@ const curatedList = [
         name: "Chicken Whopper Burger",
         restaurant: "Burger King",
         distance: 5,
-        pic: "https://images.indulgexpress.com/uploads/user/imagelibrary/2019/9/10/original/Chicken_Whopper.png",
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/northindian1.jpg",
+        price: 300,
+    },
+    {
+        id: 7,
+        name: "Chicken Whopper Burger",
+        restaurant: "Burger King",
+        distance: 5,
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/southindian2.jpg",
+        price: 300,
+    },
+    {
+        id: 8,
+        name: "Chicken Whopper Burger",
+        restaurant: "Burger King",
+        distance: 5,
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/southindian3.jpg",
+        price: 300,
+    },
+    {
+        id: 9,
+        name: "Chicken Whopper Burger",
+        restaurant: "Burger King",
+        distance: 5,
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/southindianthali.jpg",
+        price: 300,
+    },
+    {
+        id: 10,
+        name: "Chicken Whopper Burger",
+        restaurant: "Burger King",
+        distance: 5,
+        pic: "https://foodict.s3.ap-south-1.amazonaws.com/breakfast/starbucks.jpg",
         price: 300,
     },
 ];
@@ -73,11 +105,13 @@ function CuratedList({ cuisine }) {
                 <div className="curated__listitems" ref={ref}>
                     {curatedList.map((item) => (
                         <div className="individual__item" key={item.id}>
-                            <img
-                                src={item.pic}
-                                alt="food img"
-                                className="item__image"
-                            ></img>
+                            <div className="image__container">
+                                <img
+                                    src={item.pic}
+                                    alt="food img"
+                                    className="item__image"
+                                ></img>
+                            </div>
                             <div className="item__description">
                                 <div className="item__name">{item.name}</div>
                                 <div className="item__res_dist">
