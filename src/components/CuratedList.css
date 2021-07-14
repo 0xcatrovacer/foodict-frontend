@@ -80,3 +80,21 @@
     background-color: #ff6200;
     color: #ffffff;
 }
+
+@media screen and (max-width: 960px) {
+    .CuratedList {
+        margin-left: -5vh;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .CuratedList {
+        margin-left: -4vh;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .CuratedList {
+        margin-left: -5vh;
+    }
+}
