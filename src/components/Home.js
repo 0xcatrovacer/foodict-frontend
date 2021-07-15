@@ -26,10 +26,18 @@ function Home() {
             <div className="curated__container">
                 <h2 className="curated__heading">Curated List Just for You</h2>
                 <div className="curated__lists">
-                    <CuratedList cuisine="Breakfast" />
-                    <CuratedList cuisine="Lunch" />
-                    <CuratedList cuisine="Snacks & Beverages" />
-                    <CuratedList cuisine="Dinner" />
+                    <CuratedList
+                        title="Baskin Robbins"
+                        id="60f08bb177ca5d460c97097c"
+                    />
+                    <CuratedList
+                        title="Starbucks"
+                        id="60f091217c62d921481f9456"
+                    />
+                    <CuratedList
+                        title="Domino's Pizza"
+                        id="60f092b67c62d921481f946e"
+                    />
                 </div>
             </div>
         </div>
