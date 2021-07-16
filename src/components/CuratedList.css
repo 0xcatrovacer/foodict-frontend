@@ -78,7 +78,7 @@
 }
 
 .image__container {
-    max-height: 55%;
+    max-height: 58%;
 }
 
 .item__image {
@@ -90,20 +90,20 @@
 
 .item__description {
     display: flex;
+    width: 100%;
     flex-direction: column;
-    justify-content: space-between;
-    margin-left: -3vh;
 }
 
 .item__name {
     font-size: 2vh;
     margin-bottom: 1.5vh;
+    margin-left: 2vh;
 }
 
 .item__res_dist {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 1.7vh;
     margin-bottom: 1.5vh;
 }
@@ -113,7 +113,7 @@
 }
 
 .item__price {
-    margin-right: -2.5vh;
+    margin-right: 0vh;
 }
 
 .addcart__button {

@@ -38,6 +38,18 @@ function Home() {
                         title="Domino's Pizza"
                         id="60f092b67c62d921481f946e"
                     />
+                    <CuratedList
+                        title="KFC"
+                        id="60f120b170da1d5374e38bf0"
+                    />
+                    <CuratedList
+                        title="Burger King"
+                        id="60f1226a70da1d5374e38c02"
+                    />
+                    <CuratedList
+                        title="Keventers"
+                        id="60f1241f70da1d5374e38c14"
+                    />
                 </div>
             </div>
         </div>

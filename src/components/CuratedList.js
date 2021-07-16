@@ -7,18 +7,18 @@ function CuratedList({ title, id }) {
     const [curatedList, setCuratedList] = useState([]);
 
     useEffect(() => {
+        const eatery = { restaurant: id };
+
         axios({
-            method: "get",
+            method: 'POST',
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/menuitem/details`,
             headers: {
                 "Content-Type": "application/json",
             },
-            data: {
-                restaurant: id,
-            },
+            data: eatery,
         })
             .then((res) => {
-                console.log(res.data);
+                setCuratedList(res.data)
             })
             .catch((e) => {
                 console.log(e);
@@ -43,22 +43,22 @@ function CuratedList({ title, id }) {
                 </span>
                 <div className="curated__listitems" ref={ref}>
                     {curatedList.map((item) => (
-                        <div className="individual__item" key={item.id}>
+                        <div className="individual__item" key={item._id}>
                             <div className="image__container">
                                 <img
-                                    src={item.pic}
+                                    src={item.item_imageurl}
                                     alt="food img"
                                     className="item__image"
                                 ></img>
                             </div>
                             <div className="item__description">
-                                <div className="item__name">{item.name}</div>
+                                <div className="item__name">{item.item_name}</div>
                                 <div className="item__res_dist">
                                     <span className="item__restaurant">
-                                        {item.restaurant}
+                                        {item.res_name}
                                     </span>
                                     <span className="item__distance">
-                                        {item.distance} Km
+                                        5 Km
                                     </span>
                                     <span className="item__price">
                                         ₹ {item.price}
