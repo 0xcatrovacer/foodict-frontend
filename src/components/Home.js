@@ -27,27 +27,39 @@ function Home() {
                 <h2 className="curated__heading">Curated List Just for You</h2>
                 <div className="curated__lists">
                     <CuratedList
-                        title="Baskin Robbins"
+                        pretext="Want something from"
+                        keytext="Baskin Robbins"
+                        posttext="?"
                         id="60f08bb177ca5d460c97097c"
                     />
                     <CuratedList
-                        title="Starbucks"
+                        pretext="Or maybe from"
+                        keytext="Starbucks"
+                        posttext="?"
                         id="60f091217c62d921481f9456"
                     />
                     <CuratedList
-                        title="Domino's Pizza"
+                        pretext="Does"
+                        keytext="Domino's Pizza"
+                        posttext="tingle you tastebuds?"
                         id="60f092b67c62d921481f946e"
                     />
                     <CuratedList
-                        title="KFC"
+                        pretext="Do you crave for"
+                        keytext="KFC"
+                        posttext="?"
                         id="60f120b170da1d5374e38bf0"
                     />
                     <CuratedList
-                        title="Burger King"
+                        pretext="Is"
+                        keytext="Burger King"
+                        posttext="kinda your thing?"
                         id="60f1226a70da1d5374e38c02"
                     />
                     <CuratedList
-                        title="Keventers"
+                        pretext="Let's drink at"
+                        keytext="Keventers"
+                        posttext="then"
                         id="60f1241f70da1d5374e38c14"
                     />
                 </div>

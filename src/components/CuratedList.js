@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 
 import "./CuratedList.css";
 
-function CuratedList({ title, id }) {
+function CuratedList({ pretext, keytext, posttext, id }) {
     const [curatedList, setCuratedList] = useState([]);
 
     useEffect(() => {
         const eatery = { restaurant: id };
 
         axios({
-            method: 'POST',
+            method: "POST",
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/menuitem/details`,
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +18,7 @@ function CuratedList({ title, id }) {
             data: eatery,
         })
             .then((res) => {
-                setCuratedList(res.data)
+                setCuratedList(res.data);
             })
             .catch((e) => {
                 console.log(e);
@@ -33,7 +33,10 @@ function CuratedList({ title, id }) {
 
     return (
         <div className="CuratedList">
-            <h3 className="cuisine__heading">{title}</h3>
+            <h3 className="cuisine__heading">
+                {pretext} <span className="orange__keytext">{keytext}</span>{" "}
+                {posttext}
+            </h3>
             <div className="slider__container">
                 <span
                     className="angleLeft sliderButton"
@@ -52,14 +55,14 @@ function CuratedList({ title, id }) {
                                 ></img>
                             </div>
                             <div className="item__description">
-                                <div className="item__name">{item.item_name}</div>
+                                <div className="item__name">
+                                    {item.item_name}
+                                </div>
                                 <div className="item__res_dist">
                                     <span className="item__restaurant">
                                         {item.res_name}
                                     </span>
-                                    <span className="item__distance">
-                                        5 Km
-                                    </span>
+                                    <span className="item__distance">5 Km</span>
                                     <span className="item__price">
                                         ₹ {item.price}
                                     </span>

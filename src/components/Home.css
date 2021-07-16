@@ -48,12 +48,12 @@
 /* Curated Container */
 
 .curated__container {
-    margin-top: 12vh;
+    margin-top: 15vh;
     margin-left: 10vh;
 }
 
 .curated__heading {
-    margin-bottom: 7vh;
+    margin-bottom: 18vh;
     font-size: 3.4vh;
     color: #ff914d;
     cursor: default;
