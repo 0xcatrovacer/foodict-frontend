@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
+    const history = useHistory();
+
     const handleSignin = (e) => {
         e.preventDefault();
-        console.log({ username: username, password: password });
+        const user = { username, password };
+
+        axios({
+            method: "POST",
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/login`,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            data: user,
+        })
+            .then((res) => {
+                const token = res.data.token;
+                localStorage.setItem("token", token);
+                history.push("/home");
+            })
+            .catch((e) => {
+                alert("Authentication Failed");
+                setUsername("");
+                setPassword("");
+            });
     };
 
     return (
