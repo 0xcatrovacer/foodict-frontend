@@ -1,8 +1,27 @@
 import React from "react";
 import "./Navbar.css";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function Navbar() {
+    const history = useHistory();
+
+    const handleLogout = () => {
+        const token = localStorage.getItem("token");
+
+        axios({
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/logout`,
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).then(() => {
+            localStorage.removeItem("token");
+            window.location.reload();
+        });
+    };
+
     return (
         <div className="Navbar">
             <div className="navbar__left">
@@ -19,7 +38,7 @@ function Navbar() {
                 </div>
             </div>
             <div className="navbar__right">
-                <span className="navbar__name">
+                <span className="navbar__name" onClick={handleLogout}>
                     Hello, <span className="after__hello">Swarnab</span>
                 </span>
                 <span className="navbar__pastorders">

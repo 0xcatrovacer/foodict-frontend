@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import "./Login.css";
 
@@ -25,6 +25,7 @@ function Login() {
                 const token = res.data.token;
                 localStorage.setItem("token", token);
                 history.push("/home");
+                window.location.reload();
             })
             .catch((e) => {
                 alert("Authentication Failed");
