@@ -7,10 +7,9 @@ import {
 } from "react-router-dom";
 
 import "./App.css";
-import Home from "./components/Home";
 import Login from "./components/Login";
 import HomeAuth from "./components/Home-Auth";
-import Navbar from "./components/Navbar";
+import Register from "./components/Register";
 
 function App() {
     const [token, setToken] = useState("");
@@ -35,6 +34,9 @@ function App() {
                     </Route>
                     <Route exact path="/home">
                         {token ? <HomeAuth /> : <Redirect to="/login" />}
+                    </Route>
+                    <Route exact path="/register">
+                        <Register />
                     </Route>
                 </Switch>
             </Router>

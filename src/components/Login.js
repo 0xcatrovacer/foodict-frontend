@@ -83,7 +83,10 @@ function Login() {
                         </button>
                     </form>
                     <p className="register__text">
-                        Don't Have an account with us? <a href="#">Register</a>
+                        Don't Have an account with us?{" "}
+                        <a className="register__link" href="/register">
+                            Register
+                        </a>
                     </p>
                 </div>
             </div>
