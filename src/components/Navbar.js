@@ -5,7 +5,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function Navbar() {
+function Navbar({ backToHome }) {
     const numOfItems = useSelector((state) => state.numOfItems);
 
     const [name, setName] = useState("");
@@ -56,9 +56,21 @@ function Navbar() {
                         alt=""
                     ></img>
                     <span className="nav__foodict">Foodict</span>
-                    <span className="nav__restaurants">
-                        Restaurants <span className="near__you">Near You</span>
-                    </span>
+                    {backToHome ? (
+                        <span
+                            className="nav__restaurants"
+                            onClick={() => {
+                                history.push("/home");
+                            }}
+                        >
+                            Back <span className="near__you">To Home</span>
+                        </span>
+                    ) : (
+                        <span className="nav__restaurants">
+                            Restaurants{" "}
+                            <span className="near__you">Near You</span>
+                        </span>
+                    )}
                 </div>
             </div>
             <div className="navbar__right">
