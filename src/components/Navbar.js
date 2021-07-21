@@ -68,7 +68,12 @@ function Navbar() {
                 <span className="navbar__pastorders">
                     Past <span className="orders__after">Orders</span>
                 </span>
-                <ShoppingCartRoundedIcon className="navbar__cart" />
+                <ShoppingCartRoundedIcon
+                    className="navbar__cart"
+                    onClick={() => {
+                        history.push("/cart");
+                    }}
+                />
                 <span className="cartitems__total">{numOfItems}</span>
             </div>
         </div>

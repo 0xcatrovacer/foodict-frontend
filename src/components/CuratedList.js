@@ -75,7 +75,7 @@ function CuratedList({ pretext, keytext, posttext, id }) {
                             </div>
                             <button
                                 className="addcart__button"
-                                onClick={() => dispatch(addToCart())}
+                                onClick={() => dispatch(addToCart(item))}
                             >
                                 Add to Cart
                             </button>

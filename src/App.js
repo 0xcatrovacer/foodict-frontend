@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import { Provider } from "react-redux";
 
 import store from "./redux/store";
+import Cart from "./components/Cart";
 
 function App() {
     const [token, setToken] = useState("");
@@ -41,6 +42,9 @@ function App() {
                         </Route>
                         <Route exact path="/register">
                             <Register />
+                        </Route>
+                        <Route exact path="/cart">
+                            <Cart />
                         </Route>
                     </Switch>
                 </Router>

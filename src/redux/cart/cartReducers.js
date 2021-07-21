@@ -1,5 +1,6 @@
 const initialState = {
     numOfItems: 0,
+    items: [],
 };
 
 const cartReducer = (state = initialState, action) => {
@@ -8,6 +9,7 @@ const cartReducer = (state = initialState, action) => {
             return {
                 ...state,
                 numOfItems: state.numOfItems + 1,
+                items: [...state.items, action.item],
             };
         default:
             return state;
