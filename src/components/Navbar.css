@@ -45,12 +45,29 @@
 
 .navbar__name {
     margin-right: 5vh;
-    cursor: default;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navbar__name:hover {
+    color: white;
 }
 
 .navbar__pastorders {
     margin-right: 4vh;
+    transition: all 0.2s;
     cursor: pointer;
+}
+
+.navbar__pastorders:hover {
+    color: white;
+}
+
+.cart__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar__cart {

@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { removeFromCart } from "../redux";
 
 import "./Cart.css";
@@ -9,6 +10,8 @@ function Cart() {
     const totalPrice = useSelector((state) => state.totalPrice);
 
     const dispatch = useDispatch();
+
+    const history = useHistory();
 
     return (
         <div className="Cart">
@@ -56,7 +59,11 @@ function Cart() {
                         </span>
                     </p>
                     <div className="proceed__button__container">
-                        <button className="cart__proceed__button">
+                        <button
+                            className="cart__proceed__button"
+                            disabled={totalPrice == 0}
+                            onClick={() => history.push("/home")}
+                        >
                             Proceed to Checkout
                         </button>
                     </div>

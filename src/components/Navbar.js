@@ -80,13 +80,15 @@ function Navbar({ backToHome }) {
                 <span className="navbar__pastorders">
                     Past <span className="orders__after">Orders</span>
                 </span>
-                <ShoppingCartRoundedIcon
-                    className="navbar__cart"
+                <div
+                    className="cart__container"
                     onClick={() => {
                         history.push("/cart");
                     }}
-                />
-                <span className="cartitems__total">{numOfItems}</span>
+                >
+                    <ShoppingCartRoundedIcon className="navbar__cart" />
+                    <span className="cartitems__total">{numOfItems}</span>
+                </div>
             </div>
         </div>
     );
