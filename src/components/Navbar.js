@@ -5,10 +5,23 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+
 function Navbar({ backToHome }) {
     const numOfItems = useSelector((state) => state.numOfItems);
 
     const [name, setName] = useState("");
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -74,9 +87,30 @@ function Navbar({ backToHome }) {
                 </div>
             </div>
             <div className="navbar__right">
-                <span className="navbar__name" onClick={handleLogout}>
+                <span
+                    className="navbar__name"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={handleClick}
+                >
                     Hello, <span className="after__hello">{name}</span>
                 </span>
+                <Menu
+                    id="simple-menu"
+                    anchorEl={anchorEl}
+                    keepMounted
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                >
+                    <MenuItem
+                        onClick={() => {
+                            handleClose();
+                            handleLogout();
+                        }}
+                    >
+                        Logout
+                    </MenuItem>
+                </Menu>
                 <span className="navbar__pastorders">
                     Past <span className="orders__after">Orders</span>
                 </span>

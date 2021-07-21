@@ -61,7 +61,7 @@ function Cart() {
                     <div className="proceed__button__container">
                         <button
                             className="cart__proceed__button"
-                            disabled={totalPrice == 0}
+                            disabled={totalPrice === 0}
                             onClick={() => history.push("/home")}
                         >
                             Proceed to Checkout
