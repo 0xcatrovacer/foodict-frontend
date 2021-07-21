@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
 function Navbar() {
+    const [name, setName] = useState("");
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        axios({
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/details`,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then((res) => {
+                const Name = res.data.name.split(" ")[0];
+                setName(Name);
+            })
+            .catch((e) => {
+                alert(e);
+            });
+    }, []);
+
     const history = useHistory();
 
     const handleLogout = () => {
@@ -39,7 +60,7 @@ function Navbar() {
             </div>
             <div className="navbar__right">
                 <span className="navbar__name" onClick={handleLogout}>
-                    Hello, <span className="after__hello">Swarnab</span>
+                    Hello, <span className="after__hello">{name}</span>
                 </span>
                 <span className="navbar__pastorders">
                     Past <span className="orders__after">Orders</span>
