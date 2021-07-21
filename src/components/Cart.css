@@ -1,0 +1,124 @@
+.Cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cart__leftcontainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__item {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffd8bf;
+    height: 40vh;
+    width: 80vh;
+    margin: 3vh 6vh;
+    border-radius: 4vh;
+}
+
+.cartitem__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5vh 3vh;
+}
+
+.cart__item__image {
+    max-height: 20vh;
+    width: auto;
+    border-radius: 2vh;
+}
+
+.cart__item__name {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.cart__item__res {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.cart__item__price {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+.remove__button__container {
+    display: flex;
+    justify-content: center;
+}
+
+.cart__remove__button {
+    width: 20vh;
+    height: 4.2vh;
+    font-size: 1.8vh;
+    border: 0.3vh solid #ff0000;
+    color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.cart__remove__button:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+.cart__rightcontainer {
+    right: 0;
+    position: fixed;
+    margin: 3vh 6vh;
+    background-color: #ffd8bf;
+    height: 25vh;
+    width: 80vh;
+    border-radius: 4vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart__totalprice {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 10vh;
+    font-size: 2.8vh;
+}
+
+.cart__totalamount {
+    margin-left: 2vh;
+    font-weight: bold;
+}
+
+.proceed__button__container {
+    width: 100%;
+    display: flex;
+}
+
+.cart__proceed__button {
+    width: 40vh;
+    height: 4.8vh;
+    font-size: 2vh;
+    margin-left: 10vh;
+    border: 0.3vh solid #ff6600;
+    color: #ff6600;
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.cart__proceed__button:hover {
+    background-color: #ff6600;
+    color: white;
+}

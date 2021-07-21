@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
+import "./Cart.css";
+
 function Cart() {
     const items = useSelector((state) => state.items);
     const totalPrice = useSelector((state) => state.totalPrice);
@@ -9,7 +11,7 @@ function Cart() {
         <div className="Cart">
             <div className="cart__leftcontainer">
                 {items.map((item) => (
-                    <div className="cart__item">
+                    <div className="cart__item" key={item._id}>
                         <div className="cartitem__row">
                             <img
                                 src={item.item_imageurl}
@@ -35,9 +37,11 @@ function Cart() {
                     Cart Total:{" "}
                     <span className="cart__totalamount">₹ {totalPrice}</span>
                 </p>
-                <button className="cart__proceed__button">
-                    Proceed to Checkout
-                </button>
+                <div className="proceed__button__container">
+                    <button className="cart__proceed__button">
+                        Proceed to Checkout
+                    </button>
+                </div>
             </div>
         </div>
     );
