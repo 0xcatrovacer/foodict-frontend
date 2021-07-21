@@ -4,3 +4,10 @@ export const addToCart = (item) => {
         item: item,
     };
 };
+
+export const removeFromCart = (item) => {
+    return {
+        type: "REMOVE_FROM_CART",
+        item: item,
+    };
+};

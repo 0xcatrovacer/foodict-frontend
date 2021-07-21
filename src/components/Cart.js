@@ -1,11 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../redux";
 
 import "./Cart.css";
 
 function Cart() {
     const items = useSelector((state) => state.items);
     const totalPrice = useSelector((state) => state.totalPrice);
+
+    const dispatch = useDispatch();
 
     return (
         <div className="Cart">
@@ -33,7 +36,12 @@ function Cart() {
                                 </p>
                             </div>
                             <div className="remove__button__container">
-                                <button className="cart__remove__button">
+                                <button
+                                    className="cart__remove__button"
+                                    onClick={() => {
+                                        dispatch(removeFromCart(item));
+                                    }}
+                                >
                                     Remove From Cart
                                 </button>
                             </div>

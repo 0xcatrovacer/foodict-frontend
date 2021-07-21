@@ -13,6 +13,13 @@ const cartReducer = (state = initialState, action) => {
                 items: [...state.items, action.item],
                 totalPrice: state.totalPrice + action.item.price,
             };
+        case "REMOVE_FROM_CART":
+            return {
+                ...state,
+                numOfItems: state.numOfItems - 1,
+                items: state.items.filter((item) => item !== action.item),
+                totalPrice: state.totalPrice - action.item.price,
+            };
         default:
             return state;
     }
