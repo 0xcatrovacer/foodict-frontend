@@ -52,7 +52,7 @@ function Login() {
                     ></img>
                 </div>
                 <div className="login__nonimage">
-                    <form className="login__form">
+                    <form className="login__form" onSubmit={handleSignin}>
                         <div className="login__forminputs">
                             <input
                                 type="text"
