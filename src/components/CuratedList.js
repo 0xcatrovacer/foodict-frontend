@@ -1,10 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../redux";
 
 import "./CuratedList.css";
 
 function CuratedList({ pretext, keytext, posttext, id }) {
     const [curatedList, setCuratedList] = useState([]);
+
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const eatery = { restaurant: id };
@@ -68,7 +73,10 @@ function CuratedList({ pretext, keytext, posttext, id }) {
                                     </span>
                                 </div>
                             </div>
-                            <button className="addcart__button">
+                            <button
+                                className="addcart__button"
+                                onClick={() => dispatch(addToCart())}
+                            >
                                 Add to Cart
                             </button>
                         </div>

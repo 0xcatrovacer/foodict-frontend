@@ -12,6 +12,8 @@ import HomeAuth from "./components/Home-Auth";
 import Register from "./components/Register";
 import { Provider } from "react-redux";
 
+import store from "./redux/store";
+
 function App() {
     const [token, setToken] = useState("");
 

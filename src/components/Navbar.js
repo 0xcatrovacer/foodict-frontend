@@ -3,8 +3,11 @@ import "./Navbar.css";
 import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Navbar() {
+    const numOfItems = useSelector((state) => state.numOfItems);
+
     const [name, setName] = useState("");
 
     useEffect(() => {
@@ -66,7 +69,7 @@ function Navbar() {
                     Past <span className="orders__after">Orders</span>
                 </span>
                 <ShoppingCartRoundedIcon className="navbar__cart" />
-                <span className="cartitems__total">5</span>
+                <span className="cartitems__total">{numOfItems}</span>
             </div>
         </div>
     );
