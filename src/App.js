@@ -13,8 +13,7 @@ import Register from "./components/Register";
 import { Provider } from "react-redux";
 
 import store from "./redux/store";
-import Cart from "./components/Cart";
-import Navbar from "./components/Navbar";
+import CartAuth from "./components/Cart-Auth";
 
 function App() {
     const [token, setToken] = useState("");
@@ -45,8 +44,7 @@ function App() {
                             <Register />
                         </Route>
                         <Route exact path="/cart">
-                            <Navbar backToHome />
-                            <Cart />
+                            {token ? <CartAuth /> : <Redirect to="/login" />}
                         </Route>
                     </Switch>
                 </Router>
