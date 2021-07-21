@@ -1,6 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import Snackbar from "@material-ui/core/Snackbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
 
 import { addToCart } from "../redux";
 
@@ -8,6 +11,21 @@ import "./CuratedList.css";
 
 function CuratedList({ pretext, keytext, posttext, id }) {
     const [curatedList, setCuratedList] = useState([]);
+    const [open, setOpen] = useState(false);
+    const [itemName, setItemName] = useState("");
+
+    const handleClick = (name) => {
+        setOpen(true);
+        setItemName(name);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === "clickaway") {
+            return;
+        }
+
+        setOpen(false);
+    };
 
     const dispatch = useDispatch();
 
@@ -75,10 +93,35 @@ function CuratedList({ pretext, keytext, posttext, id }) {
                             </div>
                             <button
                                 className="addcart__button"
-                                onClick={() => dispatch(addToCart(item))}
+                                onClick={() => {
+                                    dispatch(addToCart(item));
+                                    handleClick(item.item_name);
+                                }}
                             >
                                 Add to Cart
                             </button>
+                            <Snackbar
+                                anchorOrigin={{
+                                    vertical: "bottom",
+                                    horizontal: "left",
+                                }}
+                                open={open}
+                                autoHideDuration={1500}
+                                onClose={handleClose}
+                                message={`${itemName} was added to Cart`}
+                                action={
+                                    <React.Fragment>
+                                        <IconButton
+                                            size="small"
+                                            aria-label="close"
+                                            color="inherit"
+                                            onClick={handleClose}
+                                        >
+                                            <CloseIcon fontSize="small" />
+                                        </IconButton>
+                                    </React.Fragment>
+                                }
+                            />
                         </div>
                     ))}
                     <span
