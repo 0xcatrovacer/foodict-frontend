@@ -14,6 +14,7 @@ import { Provider } from "react-redux";
 
 import store from "./redux/store";
 import CartAuth from "./components/Cart-Auth";
+import OrderContainer from "./components/OrderContainer";
 
 function App() {
     const [token, setToken] = useState("");
@@ -45,6 +46,13 @@ function App() {
                         </Route>
                         <Route exact path="/cart">
                             {token ? <CartAuth /> : <Redirect to="/login" />}
+                        </Route>
+                        <Route exact path="/pastorders">
+                            {token ? (
+                                <OrderContainer />
+                            ) : (
+                                <Redirect to="/login" />
+                            )}
                         </Route>
                     </Switch>
                 </Router>

@@ -111,7 +111,12 @@ function Navbar({ backToHome }) {
                         Logout
                     </MenuItem>
                 </Menu>
-                <span className="navbar__pastorders">
+                <span
+                    className="navbar__pastorders"
+                    onClick={() => {
+                        history.push("/pastorders");
+                    }}
+                >
                     Past <span className="orders__after">Orders</span>
                 </span>
                 <div
