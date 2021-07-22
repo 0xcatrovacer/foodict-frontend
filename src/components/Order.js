@@ -6,13 +6,17 @@ import { format } from "date-fns";
 const Order = ({ order }) => {
     return (
         <div className="Order">
-            <h2>Order Total: ₹ {order.orderPrice}</h2>
-            <h3>
-                Ordered On:{" "}
-                {format(new Date(order.createdAt), "do MMM Y - hh:mm a")}
-            </h3>
+            <div className="order__desc">
+                <p className="order__time">
+                    Ordered On:{" "}
+                    {format(new Date(order.createdAt), "do MMM Y - hh:mm a")}
+                </p>
+                <p className="order__totalprice">
+                    Order Total: ₹ {order.orderPrice}
+                </p>
+            </div>
             {order.order.map((orderItem) => (
-                <div key={orderItem._id}>
+                <div key={orderItem._id} className="order__item__key">
                     <OrderItem orderItem={orderItem} />
                 </div>
             ))}

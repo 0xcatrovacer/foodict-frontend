@@ -99,7 +99,7 @@ function Cart() {
             });
         console.log(response);
         dispatch(emptyCart());
-        history.push("/home");
+        history.push("/pastorders");
     };
 
     return (
