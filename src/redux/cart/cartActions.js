@@ -11,3 +11,9 @@ export const removeFromCart = (item) => {
         item: item,
     };
 };
+
+export const emptyCart = () => {
+    return {
+        type: "EMPTY_CART",
+    };
+};

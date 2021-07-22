@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { removeFromCart } from "../redux";
+import { removeFromCart, emptyCart } from "../redux";
 
 import "./Cart.css";
 import axios from "axios";
@@ -50,9 +50,7 @@ function Cart() {
             },
         })
             .then(async (res) => {
-                setDataId(res.data.id);
-                console.log(res.data);
-                console.log({ dataId });
+                await setDataId(res.data.id);
             })
             .catch((e) => {
                 console.log(e);
@@ -81,6 +79,8 @@ function Cart() {
 
     const handlePaymentSuccess = (res) => {
         console.log(res);
+        dispatch(emptyCart());
+        history.push("/home");
     };
 
     return (
