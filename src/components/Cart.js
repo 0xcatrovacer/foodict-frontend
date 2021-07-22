@@ -1,17 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { removeFromCart } from "../redux";
+import Razorpay from "razorpay";
 
 import "./Cart.css";
+import axios from "axios";
 
 function Cart() {
+    const [dataId, setDataId] = useState("");
+
     const items = useSelector((state) => state.items);
     const totalPrice = useSelector((state) => state.totalPrice);
 
     const dispatch = useDispatch();
 
     const history = useHistory();
+
+    const loadCheckout = (src) => {
+        return new Promise((resolve) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.onload = () => {
+                resolve(true);
+            };
+            script.onerror = () => {
+                resolve(false);
+            };
+            document.body.appendChild(script);
+        });
+    };
+
+    const handleCheckout = async () => {
+        const res = await loadCheckout(
+            "https://checkout.razorpay.com/v1/checkout.js"
+        );
+
+        if (!res) {
+            alert("Razorpay failed to connect");
+            return;
+        }
+
+        const token = localStorage.getItem("token");
+
+        await axios({
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/payments/order`,
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then(async (res) => {
+                setDataId(res.data.id);
+                console.log(res.data);
+                console.log({ dataId });
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+
+        const rzPayOptions = {
+            key: process.env.REACT_APP_RZPAY_KEYID,
+            amount: totalPrice * 100,
+            currency: "INR",
+            order_id: dataId,
+            name: "Foodict Corporation",
+            image: "https://foodict.s3.ap-south-1.amazonaws.com/General/foodictLogo.png",
+            handler: (res) => {
+                alert(res.razorpay_payment_id);
+            },
+            prefill: {
+                name: "John Doe",
+                email: "youremail@mail.com",
+                contact: "9999999999",
+            },
+        };
+
+        const paymentObject = new window.Razorpay(rzPayOptions);
+        paymentObject.open();
+    };
 
     return (
         <div className="Cart">
@@ -62,7 +129,7 @@ function Cart() {
                         <button
                             className="cart__proceed__button"
                             disabled={totalPrice === 0}
-                            onClick={() => history.push("/home")}
+                            onClick={handleCheckout}
                         >
                             Proceed to Checkout
                         </button>
