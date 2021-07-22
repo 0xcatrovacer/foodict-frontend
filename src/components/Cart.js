@@ -77,8 +77,27 @@ function Cart() {
         paymentObject.open();
     };
 
-    const handlePaymentSuccess = (res) => {
-        console.log(res);
+    const handlePaymentSuccess = async (response) => {
+        const token = localStorage.getItem("token");
+
+        await axios({
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/order/neworder`,
+            method: "POST",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            data: {
+                order: items,
+                orderPrice: totalPrice,
+            },
+        })
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((e) => {
+                console.log(e);
+            });
+        console.log(response);
         dispatch(emptyCart());
         history.push("/home");
     };
