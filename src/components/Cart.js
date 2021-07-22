@@ -73,8 +73,13 @@ function Cart() {
             },
         };
 
-        const paymentObject = new window.Razorpay(rzPayOptions);
-        paymentObject.open();
+        const rzPay = new window.Razorpay(rzPayOptions);
+
+        rzPay.on("payment.failed", (res) => {
+            history.push("/home");
+        });
+
+        rzPay.open();
     };
 
     const handlePaymentSuccess = async (response) => {
