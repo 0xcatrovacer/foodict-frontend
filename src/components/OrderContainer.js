@@ -17,7 +17,6 @@ const OrderContainer = () => {
             },
         })
             .then((res) => {
-                console.log(res.data);
                 setPastOrders(res.data);
             })
             .catch((e) => {
