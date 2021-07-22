@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { removeFromCart } from "../redux";
-import Razorpay from "razorpay";
 
 import "./Cart.css";
 import axios from "axios";
@@ -67,7 +66,7 @@ function Cart() {
             name: "Foodict Corporation",
             image: "https://foodict.s3.ap-south-1.amazonaws.com/General/foodictLogo.png",
             handler: (res) => {
-                alert(res.razorpay_payment_id);
+                handlePaymentSuccess(res);
             },
             prefill: {
                 name: "John Doe",
@@ -78,6 +77,10 @@ function Cart() {
 
         const paymentObject = new window.Razorpay(rzPayOptions);
         paymentObject.open();
+    };
+
+    const handlePaymentSuccess = (res) => {
+        console.log(res);
     };
 
     return (
