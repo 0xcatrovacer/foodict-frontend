@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { removeFromCart, emptyCart } from "../redux";
@@ -8,6 +8,25 @@ import axios from "axios";
 
 function Cart() {
     const [dataId, setDataId] = useState("");
+    const [name, setName] = useState("");
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+
+        axios({
+            url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/details`,
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then((res) => {
+                setName(res.data.name);
+            })
+            .catch((e) => {
+                alert(e);
+            });
+    }, []);
 
     const items = useSelector((state) => state.items);
     const totalPrice = useSelector((state) => state.totalPrice);
@@ -67,7 +86,7 @@ function Cart() {
                 handlePaymentSuccess(res);
             },
             prefill: {
-                name: "John Doe",
+                name: name,
                 email: "youremail@mail.com",
                 contact: "9999999999",
             },
