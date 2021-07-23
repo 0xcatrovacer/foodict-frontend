@@ -41,7 +41,7 @@ function Home() {
                     <CuratedList
                         pretext="Does"
                         keytext="Domino's Pizza"
-                        posttext="tingle you tastebuds?"
+                        posttext="tingle your tastebuds?"
                         id="60f092b67c62d921481f946e"
                     />
                     <CuratedList
