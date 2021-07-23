@@ -77,3 +77,59 @@
 .order__item__resname {
     margin: 3vh 0;
 }
+
+@media screen and (max-width: 770px) {
+    .order__time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order__totalprice {
+        display: flex;
+        text-align: right;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Order {
+        width: 90vw;
+    }
+    .order__desc {
+        margin: 0vh 3vh;
+        font-size: 2.2vh;
+        margin-bottom: 3vh;
+    }
+
+    .OrderItem {
+        flex-direction: column;
+        margin: 2vh 2vh;
+    }
+
+    .order__item__img {
+        margin-left: 0;
+        max-width: 60vw;
+    }
+
+    .order__column {
+        margin-right: 0vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: center;
+        font-size: 2.3vh;
+    }
+
+    .order__item__name {
+        margin: 1.5vh 0;
+    }
+
+    .order__item__price {
+        margin: 1.5vh 0;
+    }
+
+    .order__item__resname {
+        margin: 1.5vh 0;
+        margin-bottom: 4vh;
+    }
+}

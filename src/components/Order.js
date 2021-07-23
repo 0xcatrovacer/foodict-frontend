@@ -9,10 +9,18 @@ const Order = ({ order }) => {
             <div className="order__desc">
                 <p className="order__time">
                     Ordered On:{" "}
-                    {format(new Date(order.createdAt), "do MMM Y - hh:mm a")}
+                    <span className="order__time__resp">
+                        {format(
+                            new Date(order.createdAt),
+                            "do MMM Y - hh:mm a"
+                        )}
+                    </span>
                 </p>
                 <p className="order__totalprice">
-                    Order Total: ₹ {order.orderPrice}
+                    Order Total:
+                    <span className="order__price__resp">
+                        ₹ {order.orderPrice}
+                    </span>
                 </p>
             </div>
             {order.order.map((orderItem) => (
