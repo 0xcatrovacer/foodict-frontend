@@ -28,7 +28,7 @@ function Login() {
                 window.location.reload();
             })
             .catch((e) => {
-                alert("Authentication Failed");
+                alert(e.response.data.message);
                 setUsername("");
                 setPassword("");
             });

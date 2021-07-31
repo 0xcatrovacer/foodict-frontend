@@ -31,7 +31,7 @@ function Register() {
                 window.location.reload();
             })
             .catch((e) => {
-                alert("Process Failed");
+                alert(e.response.data.message);
                 setUsername("");
                 setPassword("");
             });
