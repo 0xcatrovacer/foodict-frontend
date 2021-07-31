@@ -17,7 +17,7 @@ const Order = ({ order }) => {
                     </span>
                 </p>
                 <p className="order__totalprice">
-                    Order Total:
+                    Order Total:{" "}
                     <span className="order__price__resp">
                         ₹ {order.orderPrice}
                     </span>
