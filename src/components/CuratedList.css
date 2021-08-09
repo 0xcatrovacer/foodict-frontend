@@ -144,6 +144,13 @@
     color: #ffffff;
 }
 
+.addcart__button:disabled {
+    border: 1px solid #999999;
+    background-color: #dddddd;
+    color: #666666;
+    cursor: default;
+}
+
 @media screen and (max-width: 960px) {
     .CuratedList {
         margin-left: -5vh;
