@@ -47,7 +47,7 @@ function CuratedList({ pretext, keytext, posttext, id }) {
                 </span>
                 <div className="curated__listitems" ref={ref}>
                     {curatedList.map((item) => (
-                        <CuratedListItems item={item} />
+                        <CuratedListItems item={item} key={item._id} />
                     ))}
                     <span
                         className="angleRight sliderButton"

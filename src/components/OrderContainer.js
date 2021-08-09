@@ -19,7 +19,15 @@ const OrderContainer = () => {
             },
         })
             .then((res) => {
-                setPastOrders(res.data);
+                const ordersList = res.data;
+                const pastOrdersList = [
+                    ordersList[0],
+                    ordersList[1],
+                    ordersList[2],
+                    ordersList[3],
+                    ordersList[4],
+                ];
+                setPastOrders(pastOrdersList);
             })
             .catch((e) => {
                 console.log(e);

@@ -15,7 +15,7 @@ function CuratedListContainer({ item }) {
 
     useEffect(() => {
         items.map((cartItem) => {
-            if (cartItem._id == item._id) {
+            if (cartItem._id === item._id) {
                 setAddedCart(true);
             }
         });
@@ -38,7 +38,7 @@ function CuratedListContainer({ item }) {
 
     return (
         <div>
-            <div className="individual__item" key={item._id}>
+            <div className="individual__item">
                 <div className="image__container">
                     <img
                         src={item.item_imageurl}
