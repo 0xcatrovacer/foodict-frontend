@@ -1,13 +1,13 @@
 import React from "react";
 import "./Home.css";
 
-import SearchIcon from "@material-ui/icons/Search";
+// import SearchIcon from "@material-ui/icons/Search";
 import CuratedList from "./CuratedList";
 
 function Home() {
     return (
         <div className="Home">
-            <div className="search__container">
+            {/* <div className="search__container">
                 <h2 className="search__text">
                     What are you{" "}
                     <span className="craving__orange">craving </span>
@@ -22,7 +22,7 @@ function Home() {
                         />
                     </button>
                 </div>
-            </div>
+            </div> */}
             <div className="curated__container">
                 <h2 className="curated__heading">Curated List Just for You</h2>
                 <div className="curated__lists">
