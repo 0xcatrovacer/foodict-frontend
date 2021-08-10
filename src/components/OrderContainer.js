@@ -39,11 +39,12 @@ const OrderContainer = () => {
         <div className="OrderContainer">
             <Navbar backToHome />
             <div className="past__orders">
-                {pastorders.map((order) => (
-                    <div key={order._id} className="individual__order">
-                        <Order order={order} />
-                    </div>
-                ))}
+                {pastorders &&
+                    pastorders.map((order) => (
+                        <div key={order._id} className="individual__order">
+                            <Order order={order} />
+                        </div>
+                    ))}
             </div>
         </div>
     );
