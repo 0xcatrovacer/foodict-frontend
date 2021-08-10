@@ -20,12 +20,13 @@ const OrderContainer = () => {
         })
             .then((res) => {
                 const ordersList = res.data;
+                const len = ordersList.length;
                 const pastOrdersList = [
-                    ordersList[0],
-                    ordersList[1],
-                    ordersList[2],
-                    ordersList[3],
-                    ordersList[4],
+                    ordersList[len - 5],
+                    ordersList[len - 4],
+                    ordersList[len - 3],
+                    ordersList[len - 2],
+                    ordersList[len - 1],
                 ];
                 setPastOrders(pastOrdersList);
             })
