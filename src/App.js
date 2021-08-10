@@ -15,6 +15,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import CartAuth from "./components/Cart-Auth";
 import OrderContainer from "./components/OrderContainer";
+import ResNearAuth from "./components/ResNearAuth";
 
 function App() {
     const [token, setToken] = useState("");
@@ -53,6 +54,9 @@ function App() {
                             ) : (
                                 <Redirect to="/login" />
                             )}
+                        </Route>
+                        <Route exact path="/res-near-you">
+                            {token ? <ResNearAuth /> : <Redirect to="/login" />}
                         </Route>
                     </Switch>
                 </Router>

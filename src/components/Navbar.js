@@ -79,7 +79,12 @@ function Navbar({ backToHome }) {
                             Back <span className="near__you">To Home</span>
                         </span>
                     ) : (
-                        <span className="nav__restaurants">
+                        <span
+                            className="nav__restaurants"
+                            onClick={() => {
+                                history.push("/res-near-you");
+                            }}
+                        >
                             Restaurants{" "}
                             <span className="near__you">Near You</span>
                         </span>
