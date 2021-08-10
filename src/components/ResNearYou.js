@@ -27,7 +27,7 @@ function ResNearYou() {
             <div className="resny__eateries">
                 {eateries &&
                     eateries.map((eatery) => (
-                        <div className="resny__eatery">
+                        <div className="resny__eatery" key={eatery._id}>
                             <div className="resny__eatery__toprow">
                                 <img
                                     src={eatery.eatery_imageurl}

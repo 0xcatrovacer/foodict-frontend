@@ -37,28 +37,41 @@
 }
 
 .resny__eateryimage {
-    max-width: 12vw;
+    width: 12vw;
     margin-left: 10vw;
 }
 
 .resny__eateryname {
-    font-size: 3.5vh;
+    font-size: 5vh;
     margin-right: 10vw;
 }
 
 .resny__eaterytype {
-    /* width: 100%; */
     margin-top: 4vh;
     margin-bottom: 4vh;
     font-size: 3vh;
     text-align: left;
-    /* margin-left: 30vh; */
 }
 
 .resny__eateryaddress {
-    /* width: 100%; */
     margin-bottom: 4vh;
     font-size: 2.5vh;
     text-align: left;
-    /* margin-left: 30vh; */
+}
+
+@media screen and (max-width: 430px) {
+    .resny__eatery__toprow {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .resny__eateryimage {
+        margin-left: 0;
+        width: 25vw;
+        margin-bottom: 5vh;
+    }
+
+    .resny__eateryname {
+        margin-right: 0;
+    }
 }
