@@ -72,8 +72,37 @@ $ npm start
 ## Usage:
 
 -   Users can create a new account or log into their account
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/1.png" width="600px" align="center">
+</h1>
+
 -   Users can add any item into their cart from the menu list given in the homepage
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/2.png" width="600px" align="center">
+</h1>
+
 -   Users can check their cart and remove items
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/3.png" width="600px" align="center">
+</h1>
+
 -   Users can proceed to checkout with Razorpay
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/4.png" width="600px" align="center">
+</h1>
+
 -   On a successful payment, their orders will show in the Past Orders section
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/5.png" width="600px" align="center">
+</h1>
+
 -   Users can also look for Restaurants near them
+
+<h1 align="center">
+<img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/6.png" width="600px" align="center">
+</h1>
