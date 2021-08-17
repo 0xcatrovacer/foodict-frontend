@@ -128,7 +128,6 @@ const Payment = () => {
             .catch((e) => {
                 console.log(e);
             });
-        console.log(response);
         dispatch(emptyCart());
         history.push("/pastorders");
     };
@@ -139,14 +138,14 @@ const Payment = () => {
                 <div className="address__container">
                     <Text
                         marginTop="5vw"
-                        marginLeft="5vw"
+                        marginLeft={isNotSmallerScreen && "5vw"}
                         fontSize={isNotSmallerScreen ? "1.7vw" : "20px"}
                     >
                         Enter your Address
                     </Text>
-                    <Flex direction="column" height="80vh">
+                    <Flex direction="column">
                         <Input
-                            marginLeft="5vw"
+                            marginLeft={isNotSmallerScreen && "5vw"}
                             marginTop="3vw"
                             width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
@@ -159,7 +158,7 @@ const Payment = () => {
                             }}
                         />
                         <Input
-                            marginLeft="5vw"
+                            marginLeft={isNotSmallerScreen && "5vw"}
                             marginTop="1vw"
                             width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
@@ -172,7 +171,7 @@ const Payment = () => {
                             }}
                         />
                         <Input
-                            marginLeft="5vw"
+                            marginLeft={isNotSmallerScreen && "5vw"}
                             marginTop="1vw"
                             width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
@@ -196,7 +195,7 @@ const Payment = () => {
                     <div className="proceed__button__container">
                         <button
                             className="pay__button"
-                            disabled={totalPrice === 0}
+                            disabled={address === "" || address_pin === ""}
                             onClick={handleCheckout}
                         >
                             Pay ₹ {totalPrice}
