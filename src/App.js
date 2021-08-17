@@ -16,7 +16,7 @@ import store from "./redux/store";
 import CartAuth from "./components/Cart-Auth";
 import OrderContainer from "./components/OrderContainer";
 import ResNearAuth from "./components/ResNearAuth";
-import Payment from "./components/Payment";
+import PaymentAuth from "./components/PaymentAuth";
 
 function App() {
     const [token, setToken] = useState("");
@@ -50,7 +50,7 @@ function App() {
                             {token ? <CartAuth /> : <Redirect to="/login" />}
                         </Route>
                         <Route exact path="/payment">
-                            {token ? <Payment /> : <Redirect to="/login" />}
+                            {token ? <PaymentAuth /> : <Redirect to="/login" />}
                         </Route>
                         <Route exact path="/pastorders">
                             {token ? (

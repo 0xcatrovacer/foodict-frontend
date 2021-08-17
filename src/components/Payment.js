@@ -3,12 +3,17 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { emptyCart } from "../redux";
+import { Input, Text, Flex, NumberInput } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import "./Payment.css";
 
 const Payment = () => {
     const [name, setName] = useState("");
     const [dataId, setDataId] = useState("");
+    const [address, setAddress] = useState("");
+    const [address_t, setAddress_t] = useState("");
+    const [address_pin, setAddress_pin] = useState("");
 
     const history = useHistory();
 
@@ -127,23 +132,73 @@ const Payment = () => {
     };
 
     return (
-        <div>
-            <div className="pay__rightcontainer">
-                <p className="cart__totalprice">
-                    Cart Total:{" "}
-                    <span className="cart__totalamount">₹ {totalPrice}</span>
-                </p>
-                <div className="proceed__button__container">
-                    <button
-                        className="pay__button"
-                        disabled={totalPrice === 0}
-                        onClick={handleCheckout}
-                    >
-                        Pay ₹ {totalPrice}
-                    </button>
+        <ChakraProvider>
+            <div className="payment__div">
+                <div className="address__container">
+                    <Text marginTop="5vw" marginLeft="5vw" fontSize="1.7vw">
+                        Enter your Address
+                    </Text>
+                    <Flex direction="column" height="80vh">
+                        <Input
+                            marginLeft="5vw"
+                            marginTop="3vw"
+                            width="30vw"
+                            borderColor="#ff914d"
+                            borderWidth="2px"
+                            maxLength={50}
+                            placeholder="Address Line 1"
+                            value={address}
+                            onChange={(e) => {
+                                setAddress(e.target.value);
+                            }}
+                        />
+                        <Input
+                            marginLeft="5vw"
+                            marginTop="1vw"
+                            width="30vw"
+                            borderColor="#ff914d"
+                            borderWidth="2px"
+                            maxLength={50}
+                            placeholder="Address Line 2"
+                            value={address_t}
+                            onChange={(e) => {
+                                setAddress_t(e.target.value);
+                            }}
+                        />
+                        <Input
+                            marginLeft="5vw"
+                            marginTop="1vw"
+                            width="30vw"
+                            borderColor="#ff914d"
+                            borderWidth="2px"
+                            maxLength={50}
+                            placeholder="Pincode"
+                            value={address_pin}
+                            onChange={(e) => {
+                                setAddress_pin(e.target.value);
+                            }}
+                        />
+                    </Flex>
+                </div>
+                <div className="pay__rightcontainer">
+                    <p className="cart__totalprice">
+                        Cart Total:{" "}
+                        <span className="cart__totalamount">
+                            ₹ {totalPrice}
+                        </span>
+                    </p>
+                    <div className="proceed__button__container">
+                        <button
+                            className="pay__button"
+                            disabled={totalPrice === 0}
+                            onClick={handleCheckout}
+                        >
+                            Pay ₹ {totalPrice}
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </ChakraProvider>
     );
 };
 
