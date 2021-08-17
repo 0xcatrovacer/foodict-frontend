@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { emptyCart } from "../redux";
-import { Input, Text, Flex, NumberInput } from "@chakra-ui/react";
+import { Input, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import "./Payment.css";
@@ -14,6 +14,8 @@ const Payment = () => {
     const [address, setAddress] = useState("");
     const [address_t, setAddress_t] = useState("");
     const [address_pin, setAddress_pin] = useState("");
+
+    const [isNotSmallerScreen] = useMediaQuery("(min-width:1000px)");
 
     const history = useHistory();
 
@@ -135,14 +137,18 @@ const Payment = () => {
         <ChakraProvider>
             <div className="payment__div">
                 <div className="address__container">
-                    <Text marginTop="5vw" marginLeft="5vw" fontSize="1.7vw">
+                    <Text
+                        marginTop="5vw"
+                        marginLeft="5vw"
+                        fontSize={isNotSmallerScreen ? "1.7vw" : "20px"}
+                    >
                         Enter your Address
                     </Text>
                     <Flex direction="column" height="80vh">
                         <Input
                             marginLeft="5vw"
                             marginTop="3vw"
-                            width="30vw"
+                            width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
                             borderWidth="2px"
                             maxLength={50}
@@ -155,7 +161,7 @@ const Payment = () => {
                         <Input
                             marginLeft="5vw"
                             marginTop="1vw"
-                            width="30vw"
+                            width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
                             borderWidth="2px"
                             maxLength={50}
@@ -168,7 +174,7 @@ const Payment = () => {
                         <Input
                             marginLeft="5vw"
                             marginTop="1vw"
-                            width="30vw"
+                            width={isNotSmallerScreen ? "30vw" : "90vw"}
                             borderColor="#ff914d"
                             borderWidth="2px"
                             maxLength={50}
