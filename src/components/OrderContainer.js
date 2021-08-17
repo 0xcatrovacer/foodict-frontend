@@ -9,13 +9,13 @@ const OrderContainer = () => {
     const [pastorders, setPastOrders] = useState([]);
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/order/pastorders`,
             method: "GET",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
         })
             .then((res) => {

@@ -11,13 +11,13 @@ function Cart() {
     const [name, setName] = useState("");
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/details`,
             method: "GET",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
         })
             .then((res) => {
@@ -59,13 +59,13 @@ function Cart() {
             return;
         }
 
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         await axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/payments/order`,
             method: "POST",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
         })
             .then(async (res) => {
@@ -102,13 +102,13 @@ function Cart() {
     };
 
     const handlePaymentSuccess = async (response) => {
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         await axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/order/neworder`,
             method: "POST",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
             data: {
                 order: items,

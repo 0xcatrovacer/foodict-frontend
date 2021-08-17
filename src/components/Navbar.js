@@ -24,13 +24,13 @@ function Navbar({ backToHome }) {
     };
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/details`,
             method: "GET",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
         })
             .then((res) => {
@@ -45,16 +45,16 @@ function Navbar({ backToHome }) {
     const history = useHistory();
 
     const handleLogout = () => {
-        const token = localStorage.getItem("token");
+        const foodict_token = localStorage.getItem("foodict_token");
 
         axios({
             url: `${process.env.REACT_APP_FOODICT_BACKEND}/user/logout`,
             method: "POST",
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${foodict_token}`,
             },
         }).then(() => {
-            localStorage.removeItem("token");
+            localStorage.removeItem("foodict_token");
             window.location.reload();
         });
     };

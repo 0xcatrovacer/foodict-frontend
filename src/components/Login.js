@@ -22,8 +22,8 @@ function Login() {
             data: user,
         })
             .then((res) => {
-                const token = res.data.token;
-                localStorage.setItem("token", token);
+                const foodict_token = res.data.token;
+                localStorage.setItem("foodict_token", foodict_token);
                 history.push("/home");
                 window.location.reload();
             })
