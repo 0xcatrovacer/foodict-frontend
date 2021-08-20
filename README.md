@@ -67,6 +67,20 @@ $ npm start
     <li> Deployed to Firebase
 </ul>
 
+<br>
+
+## Future Features:
+
+<br>
+
+<ul>
+<li> User rating system for orders
+<li> Search feature to search for food items or restaurants
+<li> Implementing Chakra UI for better user experience
+</ul>
+
+<br>
+
 ---
 
 ## Usage:
@@ -89,13 +103,13 @@ $ npm start
 <img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/3.png" width="600px" align="center">
 </h1>
 
--   Users can proceed to checkout with Razorpay
+-   Users can proceed to checkout with Razorpay (Test API keys have been used in the deployed version. Users don't need to add payment details.)
 
 <h1 align="center">
 <img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/4.png" width="600px" align="center">
 </h1>
 
--   On a successful payment, their orders will show in the Past Orders section
+-   On a successful (fake) payment, their orders will show in the Past Orders section
 
 <h1 align="center">
 <img src="https://foodict.s3.ap-south-1.amazonaws.com/README+images/5.png" width="600px" align="center">
